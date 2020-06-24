@@ -25,9 +25,7 @@ class CustomAdapter(val userList: ArrayList<User>) : RecyclerView.Adapter<Custom
         val address = itemView.findViewById(R.id.txtAddress) as? TextView
     }
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        Log.d("111232323","view Type = $viewType")
         val v = LayoutInflater.from(parent?.context).inflate(R.layout.list_layout,parent,false)
         return ViewHolder(v)
     }
@@ -39,7 +37,7 @@ class CustomAdapter(val userList: ArrayList<User>) : RecyclerView.Adapter<Custom
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
         val user: User = userList[position]
-        holder?.name?.text = "sami " + position.toString()
+        holder?.name?.text = user.name + position.toString()
         holder?.address?.text = user.address
         holder?.itemList?.setOnClickListener {
             Log.d("111","my name is khan")

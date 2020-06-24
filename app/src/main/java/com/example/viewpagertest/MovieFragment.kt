@@ -38,27 +38,6 @@ class MovieFragment : Fragment() {
         chatsList.add(Chat("Cardi B", "11:00 AM"))
         chatsList.add(Chat("Drake", "12:00 AM"))
 
-        users.add(User("sami","Dhaka, Rajshahi"))
-        users.add(User("sami1","Dhaka, Rajshahi"))
-        users.add(User("sami2","Dhaka, Rajshahi"))
-        users.add(User("sami3","Dhaka, Rajshahi"))
-        users.add(User("sami4","Dhaka, Rajshahi"))
-        users.add(User("sami5","Dhaka, Rajshahi"))
-        users.add(User("sami6","Dhaka, Rajshahi"))
-        users.add(User("sami6","Dhaka, Rajshahi"))
-        users.add(User("sami6","Dhaka, Rajshahi"))
-        users.add(User("sami6","Dhaka, Rajshahi"))
-        users.add(User("sami6","Dhaka, Rajshahi"))
-        users.add(User("sami6","Dhaka, Rajshahi"))
-        users.add(User("sami6","Dhaka, Rajshahi"))
-        users.add(User("sami6","Dhaka, Rajshahi"))
-        users.add(User("sami6","Dhaka, Rajshahi"))
-        users.add(User("sami6","Dhaka, Rajshahi"))
-        users.add(User("sami6","Dhaka, Rajshahi"))
-        users.add(User("sami6","Dhaka, Rajshahi"))
-        users.add(User("sami6","Dhaka, Rajshahi"))
-
-
         val video_recyclerview = rootView.findViewById(R.id.recyclerView) as RecyclerView
 
         video_recyclerview.layoutManager = LinearLayoutManager(activity)
