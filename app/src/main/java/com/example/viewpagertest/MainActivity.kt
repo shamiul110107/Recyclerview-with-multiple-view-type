@@ -3,6 +3,7 @@ package com.example.viewpagertest
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.viewpager.widget.ViewPager
+import com.example.viewpagertest.Adapter.MyAdapter
 import com.google.android.material.tabs.TabLayout
 
 class MainActivity : AppCompatActivity() {
@@ -21,7 +22,11 @@ class MainActivity : AppCompatActivity() {
         tabLayout!!.addTab(tabLayout!!.newTab().setText("Movie"))
         tabLayout!!.tabGravity = TabLayout.GRAVITY_FILL
         println("number of tab item = $tabLayout!!.tabCount")
-        val adapter = MyAdapter(this, supportFragmentManager, tabLayout!!.tabCount)
+        val adapter = MyAdapter(
+            this,
+            supportFragmentManager,
+            tabLayout!!.tabCount
+        )
         viewPager!!.adapter = adapter
 
         viewPager!!.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tabLayout))

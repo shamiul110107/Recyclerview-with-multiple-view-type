@@ -1,9 +1,12 @@
-package com.example.viewpagertest
+package com.example.viewpagertest.Adapter
 
 import android.content.Context
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
+import com.example.viewpagertest.Fragment.HomeFragment
+import com.example.viewpagertest.Fragment.MovieFragment
+import com.example.viewpagertest.Fragment.SportFragment
 
 class MyAdapter(private val myContext: Context, fm: FragmentManager, internal var totalTabs: Int) : FragmentPagerAdapter(fm,
     BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {

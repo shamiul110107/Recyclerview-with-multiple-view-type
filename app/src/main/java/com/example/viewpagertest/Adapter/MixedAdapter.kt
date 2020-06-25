@@ -1,13 +1,14 @@
-package com.example.viewpagertest
+package com.example.viewpagertest.Adapter
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-private val TYPE_CHAT: Int = 1
-private val TYPE_VIDEO: Int = 2
+import com.example.viewpagertest.R
+
+private const val TYPE_CHAT: Int = 1
+private const val TYPE_VIDEO: Int = 2
 
 class MixedAdapter(var mData: List<Any>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun getItemViewType(position: Int): Int {
@@ -23,22 +24,24 @@ class MixedAdapter(var mData: List<Any>) : RecyclerView.Adapter<RecyclerView.Vie
         val viewHolder: RecyclerView.ViewHolder?
         when (viewType) {
             TYPE_CHAT -> {
-                layout = R.layout.recyclerview_adapterchat
+                layout =
+                    R.layout.recyclerview_adapterchat
                 val chatView = LayoutInflater.from(parent.context).inflate(layout, parent, false)
                 viewHolder = ChatViewHolder(chatView)
             }
             TYPE_VIDEO -> {
-                layout = R.layout.recyclerview_adaptervideo
+                layout =
+                    R.layout.recyclerview_adaptervideo
                 val videoView = LayoutInflater.from(parent.context).inflate(layout, parent, false)
-                viewHolder = VideoViewHolder(videoView)
+                viewHolder =
+                    VideoViewHolder(videoView)
             }
             else -> viewHolder = null
         }
         return viewHolder!!
     }
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        val viewType = holder.itemViewType
-        when (viewType) {
+        when (holder.itemViewType) {
             TYPE_CHAT -> {
                 val chat = mData[position] as Chat
                 (holder as ChatViewHolder).showDetails(chat)
@@ -64,8 +67,8 @@ class MixedAdapter(var mData: List<Any>) : RecyclerView.Adapter<RecyclerView.Vie
             // Attach values for each item
             val userName = chat.getuserName()
             val Time = chat.gettime()
-            userNameTextView.setText(userName)
-            TimeTextView.setText(Time)
+            userNameTextView.text = userName
+            TimeTextView.text = Time
         }
     }
 }
@@ -79,9 +82,9 @@ class VideoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         TimeTextView = itemView.findViewById(R.id.videoTime)
     }
     fun showDetails(video: Video) {
-        userNameTextView.setText(video.getuserName())
-        PlaceTextView.setText(video.getplace())
-        TimeTextView.setText(video.gettime())
+        userNameTextView.text = video.getuserName()
+        PlaceTextView.text = video.getplace()
+        TimeTextView.text = video.gettime()
     }
 }
 class Chat(val userName: String, val time: String){
